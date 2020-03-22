@@ -9,54 +9,54 @@ class XylophoneApp extends StatelessWidget {
     player.play('note$noteNum.wav');
   }
 
+  // function with named arguments
+  Expanded buildKey({Color color, int soundNumber}) {
+    return Expanded(
+      child: FlatButton(
+        color: color,
+        onPressed: () {
+          playSound(soundNumber);
+        },
+        child: null,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              FlatButton(
+              buildKey(
                 color: Colors.red,
-                onPressed: () {
-                  playSound(1);
-                },
+                soundNumber: 1,
               ),
-              FlatButton(
+              buildKey(
                 color: Colors.orange,
-                onPressed: () {
-                  playSound(2);
-                },
+                soundNumber: 2,
               ),
-              FlatButton(
+              buildKey(
                 color: Colors.yellow,
-                onPressed: () {
-                  playSound(3);
-                },
+                soundNumber: 3,
               ),
-              FlatButton(
+              buildKey(
                 color: Colors.green,
-                onPressed: () {
-                  playSound(4);
-                },
+                soundNumber: 4,
               ),
-              FlatButton(
+              buildKey(
                 color: Colors.teal,
-                onPressed: () {
-                  playSound(5);
-                },
+                soundNumber: 5,
               ),
-              FlatButton(
+              buildKey(
                 color: Colors.blue,
-                onPressed: () {
-                  playSound(6);
-                },
+                soundNumber: 6,
               ),
-              FlatButton(
+              buildKey(
                 color: Colors.purple,
-                onPressed: () {
-                  playSound(7);
-                },
+                soundNumber: 7,
               ),
             ],
           ),
